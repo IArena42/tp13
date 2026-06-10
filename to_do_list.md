@@ -16,6 +16,7 @@ Fonction.php
     - dbconnect []
     - getdepartement
     - getEmploye/Depart
+    -iza ilay employee ao anatina departement ray()
 
 # CSS
 Bootstrap
