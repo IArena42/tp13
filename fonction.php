@@ -53,3 +53,16 @@ function getDepartment_Manager()
     $result = getAllLine($sql);
     return $result;
 }
+
+function recherche_personne_dans_departement($dept_no) {
+    $sql = " select dept_emp.emp_no , employees.first_name, employees.last_name 
+            from dept_emp 
+            join employees on dept_emp.emp_no = employees.emp_no 
+            WHERE dept_no = '%s'";
+    $sql = sprintf($sql,$dept_no);
+
+    echo $sql; // Affiche la requête SQL pour le débogage
+    return getAllLine($sql);
+}
+?>
+
