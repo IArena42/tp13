@@ -1,23 +1,6 @@
 <?php
-    #page de connexion du client :
-   $client = mysqli_connect('localhost','root','','tp_php');
-   if (!$client) 
-    {
-        echo "connexion a échoué " ;
-    };
-
-    #recuperation du code par $get :
-    $code = $_GET['code'];
-
-    #assemblage du sql et du php  avec le code :
-    $requete = "SELECT SOCIETE,ADRESSE,PAYS FROM CLIENTS WHERE CODE_CLIENT = "."'".$code."'" ;
-
-    #resultat de client et du requete
-    $resultat = mysqli_query($client,$requete);
-
-    #utilisation "donnee" pour stocker le resultat 
-    $donnee = mysqli_fetch_assoc($resultat) ;
-
+    include ("fonction.php");
+    $fiche = get_Employee_Profile($_GET['emp_no']);
 ?>
 
 <!DOCTYPE html>
@@ -25,30 +8,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fiche du client</title>
+    <title>Document</title>
 </head>
 <body>
-    <table width = 1000 border = 1>
-        <tr>
-            <th>code clients</th>
-            <td><?php echo $code?></td>
-        </tr>
+    <p>Fiche de l'employé "<?php echo $fiche['first_name']; ?>"</p>
+    <table border="1">
 
         <tr>
-            <th>societe</th>
-            <td><?php echo $donnee['SOCIETE'] ;?></td>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>birth date</th>   
+            <th>hire date</th>
+            <th>emp no</th>   
+            <th>gender</th>    
         </tr>
-
         <tr>
-            <th>adresse</th>
-            <td><?php echo $donnee['ADRESSE'] ;?></td>
-        </tr>
+            <td><?php echo $fiche['first_name']; ?></td>
+            <td><?php echo $fiche['last_name']; ?></td>
+            <td><?php echo $fiche['birth_date']; ?></td>
+            <td><?php echo $fiche['hire_date']; ?></td>
+            <td><?php echo $fiche['emp_no']; ?></td>
+            <td><?php echo $fiche['gender']; ?></td>
 
-        <tr>
-            <th>Pays</th>
-            <td><?php echo $donnee['PAYS']; ?></td>
-        </tr>
-        
+        </tr>  
+
     </table>
 </body>
 </html>
