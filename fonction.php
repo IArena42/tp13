@@ -97,7 +97,6 @@ function get_Employee_Profile($emp_no) {
 
     return getOneLine($sql);
 }
-<<<<<<< HEAD
 
 function historique($emp_no) {
     $sql = "SELECT * from salaries
@@ -117,5 +116,3 @@ function historique_titre($emp_no) {
 
 
 ?>
-=======
->>>>>>> 979d0428a191e44070ee4fdbba83da74507e663a
