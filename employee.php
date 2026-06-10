@@ -1,6 +1,6 @@
 <<?php
     include 'fonction.php';
-    $id="d001";
+    $id= $_GET['id'];
     $employees = recherche_personne_dans_departement($id);
 ?>
 <!DOCTYPE html>

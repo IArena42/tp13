@@ -28,7 +28,7 @@ $department = getDepartment_Manager();
                 foreach ($department as $d) {
                     ?>
                     <tr>
-                        <td><a href="employe.php?<?= $d["num"] ?>"><?= $d["num"] ?></a></td>
+                        <td><a href="employee.php?id=<?= $d["num"] ?>"><?= $d["num"] ?></a></td>
                         <td><?= $d["name"] ?></td>
                         <td><?= $d["first_name"]." ".$d["last_name"] ?></td>
                         <td><?= $d["num_emp"] ?></td>
