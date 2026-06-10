@@ -62,15 +62,24 @@ function recherche_personne_dans_departement($dept_no)
             WHERE dept_no = '%s'";
     $sql = sprintf($sql, $dept_no);
 
-    echo $sql; // Affiche la requête SQL pour le débogage
+    // echo $sql; // Affiche la requête SQL pour le débogage
     return getAllLine($sql);
 }
 
 function default_search($dept, $emp, $min, $max)
 {
 
-    $sql = "SELECT *  FROM v_dept_emp WHERE department LIKE '%s%s%s' AND age > %s AND age < %s AND (v_dept_emp.first LIKE '%s%s%s' OR v_dept_emp.last LIKE '%s%s%s')";
-    $sql = sprintf($sql, "%",$dept, "%", $min, $max, "%", $emp, "%", "%", $emp, "%");
+    $sql    = "SELECT *  FROM v_dept_emp WHERE department LIKE '%s%s%s' AND age > %s AND age < %s AND (v_dept_emp.first LIKE '%s%s%s' OR v_dept_emp.last LIKE '%s%s%s')";
+    $sql    = sprintf($sql, "%", $dept, "%", $min, $max, "%", $emp, "%", "%", $emp, "%");
     $result = getAllLine($sql);
     return $result;
-    }
+}
+function get_Employee_Profile($emp_no) {
+    $sql = "SELECT * FROM employees
+            WHERE employees.emp_no = '%s'";
+    $sql = sprintf($sql, $emp_no);
+
+   // echo $sql; // Affiche la requête SQL pour le débogage
+
+    return getOneLine($sql);
+}
