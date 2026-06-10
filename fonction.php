@@ -74,6 +74,9 @@ function default_search($dept, $emp, $min, $max)
     $result = getAllLine($sql);
     return $result;
 }
+
+
+// fonction pour faire apparaitre les fiches de l'employee
 function get_Employee_Profile($emp_no) {
     $sql = "SELECT * FROM employees
             WHERE employees.emp_no = '%s'";
