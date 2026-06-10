@@ -58,12 +58,25 @@ function recherche_personne_dans_departement($dept_no) {
     $sql = " select dept_emp.emp_no , employees.first_name, employees.last_name 
             from dept_emp 
             join employees on dept_emp.emp_no = employees.emp_no 
-            WHERE dept_no = '%s'";
+            WHERE dept_no = 'd007'";
     $sql = sprintf($sql,$dept_no);
 
-    echo $sql; // Affiche la requête SQL pour le débogage
+   // echo $sql; // Affiche la requête SQL pour le débogage
     return getAllLine($sql);
 }
+
+
+// fonction pour faire apparaitre les fiches de l'employee
+function get_Employee_Profile($emp_no) {
+    $sql = "SELECT * FROM employees
+            WHERE employees.emp_no = '%s'";
+    $sql = sprintf($sql, $emp_no);
+
+   // echo $sql; // Affiche la requête SQL pour le débogage
+
+    return getOneLine($sql);
+}
+
 
 ?>
 
