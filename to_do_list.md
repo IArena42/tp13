@@ -5,18 +5,18 @@ Configuration [5010, 4h]
 
 # PHP
 Index.php
-    - Liste deparetement
-    - colonne manager
-    - Lien vers Employe.php
+    - Liste deparetement[5010, 5]
+    - colonne manager[5010, 5]
+    - Lien vers Employe.php[5010]
 
 Employe.php
-    - Liste employes
+    - Liste employes[4737, 5]
 
 Fonction.php
     - dbconnect []
-    - getdepartement
-    - getEmploye/Depart
-    -iza ilay employee ao anatina departement ray()
+    - getdepartement[]
+    - getEmploye/Depart[]
+    - recherche_Employe/Department [4737, 15]
 
 # CSS
 Bootstrap
