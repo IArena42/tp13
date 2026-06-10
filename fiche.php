@@ -30,8 +30,11 @@
             <td><?php echo $fiche['hire_date']; ?></td>
             <td><?php echo $fiche['emp_no']; ?></td>
             <td><?php echo $fiche['gender']; ?></td>
+<<<<<<< HEAD
             <td><?php echo $fiche['salary']; ?></td>
 
+=======
+>>>>>>> 979d0428a191e44070ee4fdbba83da74507e663a
         </tr>  
 
     </table>
