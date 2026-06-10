@@ -64,5 +64,6 @@ function recherche_personne_dans_departement($dept_no) {
     echo $sql; // Affiche la requête SQL pour le débogage
     return getAllLine($sql);
 }
+
 ?>
 
