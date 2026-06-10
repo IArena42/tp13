@@ -21,7 +21,24 @@ $department = getDepartment_Manager();
 </head>
 <body>
     <main>
-        <div>
+    <div>
+        <h1>Recherche</h1>
+        <form action="recherche.php" method="get">
+            <select name="dept" id="" aria-placeholder="Dept">
+                
+                <?php foreach ($department as $d) {
+                    ?>
+                    <option value="<?= $d["name"] ?>"><?= $d["name"] ?></option>
+                    <?php 
+                } ?>
+            </select>
+            <input type="text"   name="emp" placeholder="Employe">
+            <input type="number" name="min" min="0"   placeholder="Min">
+            <input type="number" name="max" max="100" placeholder="Max">
+            <input type="submit" value="Rechercher">
+        </form>
+    </div>
+    <div>
             <h1>Liste departement</h1>
             <table>
                 <tr>
@@ -44,6 +61,7 @@ $department = getDepartment_Manager();
                 ?>
             </table>
         </div>
+
     </main>  
 </body>
 </html>

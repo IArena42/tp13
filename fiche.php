@@ -29,7 +29,6 @@
             <td><?php echo $fiche['hire_date']; ?></td>
             <td><?php echo $fiche['emp_no']; ?></td>
             <td><?php echo $fiche['gender']; ?></td>
-
         </tr>  
 
     </table>
