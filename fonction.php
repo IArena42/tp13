@@ -67,16 +67,42 @@ function recherche_personne_dans_departement($dept_no) {
 
 
 // fonction pour faire apparaitre les fiches de l'employee
+//function get_Employee_Profile($emp_no) {
+//    $sql = "SELECT * FROM employees
+//            WHERE employees.emp_no = '%s'";
+//    $sql = sprintf($sql, $emp_no);
+//
+//   // echo $sql; // Affiche la requête SQL pour le débogage
+//
+//    return getOneLine($sql);
+//}
+
 function get_Employee_Profile($emp_no) {
-    $sql = "SELECT * FROM employees
+    $sql = "SELECT employees.emp_no ,employees.birth_date ,employees.hire_date ,employees.first_name ,employees.last_name ,
+    employees.gender ,salaries.salary
+    FROM employees
+    join salaries on employees.emp_no = salaries.emp_no
             WHERE employees.emp_no = '%s'";
     $sql = sprintf($sql, $emp_no);
-
-   // echo $sql; // Affiche la requête SQL pour le débogage
 
     return getOneLine($sql);
 }
 
+function historique($emp_no) {
+    $sql = "SELECT * from salaries
+            WHERE emp_no = '%s' ";
+    $sql = sprintf($sql, $emp_no);
+
+    return getAllLine($sql);
+}
+
+function historique_titre($emp_no) {
+    $sql = "SELECT * from titles
+            WHERE emp_no = '%s' ";
+    $sql = sprintf($sql, $emp_no);
+
+    return getAllLine($sql);
+}
+
 
 ?>
-

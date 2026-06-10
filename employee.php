@@ -1,4 +1,4 @@
-<<?php
+<?php
     include 'fonction.php';
     $id= $_GET['id'];
     $employees = recherche_personne_dans_departement($id);
@@ -14,7 +14,9 @@
     <h1>Employees in Department <?php echo $id; ?></h1>
     <ul>
         <?php foreach ($employees as $employee): ?>
-            <li><?php echo $employee['first_name'].' '.$employee['last_name']; ?></li>
+            <li><a href="fiche.php?emp_no=<?php echo $employee['emp_no']; ?>">
+                <?php echo $employee['first_name'].' '.$employee['last_name']; ?></a>
+                </li>
         <?php endforeach; ?>
     </ul>
 </body>

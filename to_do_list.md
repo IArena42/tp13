@@ -17,21 +17,21 @@ Employe.php
     - Liste employes[4737, 5]
 
 Fonction.php
-    - dbconnect []
-    - getdepartement[]
-    - getEmploye/Depart[]
-    - recherche_Employe/Department [4737, 15]
+    - dbconnect [4737 , 3mn]
+    - getdepartement[5010 ,5mn]
+    - getEmploye/Depart[5010 ,5mn]
+    - recherche_Employe/Department [4737, 15mn]
     - Liste employes [4737 ,6mn]
 
 Fiche.php:
-    -liens employee => fiche [4737 ]
+    -liens employee => fiche [4737 ,10mn]
     -historique du salaire et de l'emploie occupe [4737 ,]
 
 Formulaire.php(recherche):
-    -departement [5010 ,]
-    -nom_employees[5010 ,]
-    -age min [5010 ,]
-    -age max [5010 ,]
+    -departement [5010 ,2mn]
+    -nom_employees[5010 ,2mn]
+    -age min [5010 ,2mn]
+    -age max [5010 ,2mn]
 
 Fonction.php
     - dbconnect() [4737 ,2mn]
@@ -40,9 +40,9 @@ Fonction.php
     -recherche employee() [4737 ,6mn]
 
     -fiche[47,73, en cours ]
-    -recherche formulaire [5010 , 20mn]
-    -fiche_employee [5010 ,en cours]
-    -affichage_20_ligne [5010 ,en cours]
+    -recherche formulaire [5010 , 30mn]
+    -fiche_employee [4737,8mn]
+    -affichage_20_ligne [non_fait]
 
 # CSS
 Bootstrap
